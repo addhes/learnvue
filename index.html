@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar Html</title>
+  </head>
+  <body>
+
+  <div id="app">
+    <input type="text" v-on:keyup.13="mbuar">
+  <button v-on:click="boom('pesan berdarah')">Klick Saya</button>
+  <a v-on:click.prevent="mbuar"> link </a>
+
+  <template-baru></template-baru>
+  <template-baru></template-baru>
+  <template-baru></template-baru>
+  </div>
+
+  <script src="vue.min.js"></script>
+  <script>
+
+    var TemplateBaru = Vue.extend({
+      template: '<h1>Adhe Ganteng</h1>'
+    })
+
+    Vue.component('template-baru', TemplateBaru)
+
+    var vo = new Vue({
+      el : '#app',
+      data : {
+
+      },
+      
+    methods: {
+      boom : function(text){
+        console.log('boom terpanggil')
+        alert('Duar!' + text)
+      },
+      mbuar: function(){
+        console.log('terpanggil')
+      }
+    }
+  })
+  </script>
+  </body>
+</html>

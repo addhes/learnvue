@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>belajar vue</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+      .fade-enter-active {
+        transition: opacity .30s ease-in-out;
+      }
+      .fade-enter-active, .fade-leave-active{
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="app">
+    <ul>
+      <li><a href="#" @click="currentView='home'"> Home </a></li>
+      <li><a href="#" @click="currentView='members'"> member </a></li>
+    </ul>
+
+    <transition class="animated" name="custom-fade" mode="out-in">
+    <component :is="currentView"></component>
+    </transition>
+  </div>
+
+  <template id="home-template">
+<div>
+  <h1>mencari cinta sejati</h1>
+  <h2>Kamana tuh</h2>
+</div>
+  </template>
+
+  <template id="member-template">
+    <ul>
+      <li v-for="member in members">
+        {{ member }}
+      </li>
+    </ul>
+  </template>
+
+  <script src="../vue.min.js"></script>
+  <script type="text/javascript">
+
+  Vue.transition('custom-fade', {
+    enterClass: 'bounceInDown',
+    leaveClass: 'fadeOutUp',
+  });
+
+  Vue.component('home',{
+    template : '#home-template',
+  });
+
+  Vue.component('members', {
+    template : '#member-template',
+    data : function(){
+      return{
+        members : [
+          'ade','kamu','kua',
+        ]
+      }
+    }
+  });
+
+
+  var vo = new Vue({
+    el : '#app',
+    data : {
+      currentView : 'home',
+    },
+  })
+  </script>
+  </body>
+</html>

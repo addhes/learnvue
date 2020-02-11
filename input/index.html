@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wowo</title>
+  </head>
+  <body>
+  <div id="app">
+    <input v-model="msg">
+    <p> {{ msg }} </p> <br>
+
+    <input type="checkbox" id="frontend" value="frontend">
+    <label for="frontend">frontend</label>
+    <input type="checkbox" id="backend" value="backend">
+    <label for="backend">backend
+    </label>
+  </div>
+
+  <script src="../vue.min.js"></script>
+  <script>
+    new Vue({
+      el : '#app',
+      data : {
+        msg : ''
+      }
+    })
+  </script>
+  </body>
+</html>
