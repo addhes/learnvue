@@ -21,7 +21,7 @@ Vue.component('coments',{
   //variable yang selalu berubah
   computed : {
     coto : function(){
-      if ( this.pluse == true)
+      if ( this.pluse)
       return this.coment.coto + 1
       else if (this.minus)
       return this.coment.coto - 1

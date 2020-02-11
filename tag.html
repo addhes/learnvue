@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Belajar Vue</title>
   </head>
   <body>
 
   <div id="app">
     <ul>
-      <coments v-for="coment in coments" :coment="coment"></coments>
+      <coments v-for="(coment,index) in coments" :coment="coment" :key="index"></coments>
     </ul>
   </div>
 
