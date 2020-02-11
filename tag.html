@@ -8,16 +8,18 @@
 
   <div id="app">
     <ul>
-      <coments v-for="(coment,index) in coments" :coment="coment" :key="index"></coments>
+      <coments v-for="coment in coments" :coment="coment"></coments>
     </ul>
   </div>
 
   <template id="coment-template">
-    <div v-on:click="sundul"> + </div>
     <div>
-      {{ coment.body }} - {{ coment.time }} || Coto: {{ coto }}
+      <div v-on:click="sundul"> + </div>
+      <div>
+        {{ coment.body }} - {{ coment.time }} || Coto: {{ coto }}
+      </div>
+      <div v-on:click="bata"> - </div>
     </div>
-    <div v-on:click="bata"> - </div>
   </template>
 
   <script src="vue.min.js"></script>
