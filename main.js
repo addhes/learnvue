@@ -21,7 +21,7 @@ Vue.component('coments',{
   //variable yang selalu berubah
   computed : {
     coto : function(){
-      if ( this.pluse)
+      if ( this.plus == true)
       return this.coment.coto + 1
       else if (this.minus)
       return this.coment.coto - 1
@@ -36,8 +36,14 @@ var vm = new Vue({
   data : {
     coments : [
       {body : 'ini komentar saya', time: '20-1-14', coto: 0},
-      {body : 'ini komentar gams', time: '14-1-14', coto: 0},
-      {body : 'ini komentar kamu', time: '04-1-14', coto: 0},
+      {body : 'ini komentar gams', time: '14-1-14', coto: 5},
+      {body : 'ini komentar kamu', time: '04-1-14', coto: 7},
     ]
+  },
+  methods: {
+    postComent: function(){
+      this.coments.push(
+      )
+    }
   }
 })

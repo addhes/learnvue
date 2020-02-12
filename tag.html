@@ -3,22 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Belajar Vue</title>
+    <style>
+      .disable {
+        color: red;
+      }
+    </style>
   </head>
   <body>
 
   <div id="app">
-    <ul>
-      <coments v-for="coment in coments" :coment="coment"></coments>
-    </ul>
+    <div>
+      <ul>
+        <coments v-for="coment in coments" :coment="coment"></coments>
+      </ul>
+
+        <textarea v-model="coment_text" @keyup.enter="postComent"></textarea>
+    </div>
   </div>
 
   <template id="coment-template">
     <div>
-      <div v-on:click="sundul"> + </div>
+      <div v-on:click="sundul" v-bind:class="{'disable':plus}"> + </div>
       <div>
         {{ coment.body }} - {{ coment.time }} || Coto: {{ coto }}
       </div>
-      <div v-on:click="bata"> - </div>
+      <div v-on:click="bata" v-bind:class="{'disable':minus}"> - </div>
     </div>
   </template>
 
